@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Mercury">
+    <Resource name="jdbc/MercuryDB" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="mercury" password="mercury" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://192.168.111.13:3306/mercury"/>
+</Context>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Netbeans web-app tag
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
+-->
+<!-- Apache Tomcat web-app -->
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <description>Mercury App</description>
+    <icon>
+        <large-icon>/img/icon32.gif</large-icon>
+        <small-icon>/img/icon16.gif</small-icon>
+    </icon>
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>com.mercury.controller.Controller</servlet-class>
+        <init-param>
+            <param-name>
+                username
+            </param-name>
+            <param-value>
+                admin
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>
+                password
+            </param-name>
+            <param-value>
+                admin
+            </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/MercuryDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    
+    <servlet>
+        <servlet-name>Accedi</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+        <init-param>
+            <param-name>pag</param-name>
+            <param-value>1</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Accedi</servlet-name>
+        <url-pattern>/accedi</url-pattern>   
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Registrazione</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+        <init-param>
+            <param-name>pag</param-name>
+            <param-value>2</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registrazione</servlet-name>
+        <url-pattern>/registrazione</url-pattern>   
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Content</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+        <init-param>
+            <param-name>pag</param-name>
+            <param-value>3</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Content</servlet-name>
+        <url-pattern>/content</url-pattern>   
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Evento</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+        <init-param>
+            <param-name>pag</param-name>
+            <param-value>4</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Evento</servlet-name>
+        <url-pattern>/evento</url-pattern>   
+    </servlet-mapping>
+    
+</web-app>
